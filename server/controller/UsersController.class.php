@@ -11,7 +11,16 @@ class UsersController extends Controller {
     }
 
     public function index() {
-        
+        include_once 'view/login.php';
+    }
+
+    public function addUser() {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //validations
+            //$this->user->insertRecord([$loginPost,$mailPost,$passwordPost]);
+        } else {
+            include_once 'view/signup.php';
+        }
     }
 
 }

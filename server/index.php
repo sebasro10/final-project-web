@@ -19,18 +19,16 @@ $usersController = new UsersController();
 
 session_start();
 if(!isset($_SESSION["login"])){
-    if (isset($_GET['action']) && $_GET['action'] == 'inscription') {
+    if (isset($_GET['action']) && $_GET['action'] == 'signUp') {
         $usersController->addUser();
     } else {
-        $homeController->index();
+        $usersController->index();
     }
 } else if (isset($_GET['action'])) {
     $action = $_GET['action'];
     switch ($action) {
         case 'login':
             $homeController->index();
-            break;
-        case 'signup':
             break;
         case 'countability':
             break;
@@ -53,7 +51,7 @@ if(!isset($_SESSION["login"])){
         case 'logout':
             $_SESSION = array();
             session_destroy();
-            $homeController->index();
+            $usersController->index();
             break;
         default:
             $homeController->index();
