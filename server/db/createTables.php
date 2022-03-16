@@ -49,8 +49,8 @@ $statements = [
         quantity   VARCHAR(100) NOT NULL,
         currency  VARCHAR(100) NOT NULL,
         id_mission   INT,
-        preuve VARCHAR(100) NOT NULL, 
-        type_de_depense VARCHAR(100) NOT NULL,
+        evidence VARCHAR(100) NOT NULL, 
+        type_of_expense VARCHAR(100) NOT NULL,
         foreign key (id_mission) references missions(id_mission),
         PRIMARY KEY(id_cost)
     )'
