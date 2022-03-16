@@ -21,7 +21,7 @@ class Service extends DataModel
 
     function deleteRecord($id)
     {
-        $sql = "delete from services where id='$id'";
+        $sql = "delete from services where id_service='$id'";
         $this->statement = $this->conn->query($sql);
         $success = $this->statement->execute();
         return $success;
@@ -29,7 +29,7 @@ class Service extends DataModel
 
     function insertRecord($values)
     {
-        $sql = 'insert into services (id_user, id_author, citation, citationDate) values(?,?,?,?)';
+        $sql = 'insert into services (id_service, name) values(?,?)';
         $this->statement = $this->conn->prepare($sql);
         $success = $this->statement->execute($values);
         return $success;
@@ -37,11 +37,9 @@ class Service extends DataModel
 
     function updateRecord($id, $values)
     {
-        $sql = "update services set id_user=?,
-            id_author=?,
-            citation=?,
-            citationDate=?
-            where id=$id";
+        $sql = "update services set id_service=?,
+            name=?,
+            where id_service=$id";
         $this->statement = $this->conn->prepare($sql);
         $success = $this->statement->execute($values);
         return $success;
