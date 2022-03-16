@@ -2,12 +2,12 @@
 
 include_once 'controller/Controller.class.php';
 
-class ServicesController extends Controller {
+class UsersController extends Controller {
 
-    private $service = null;
+    private $user = null;
 
     function __construct() {
-        $this->service = new Service();
+        $this->user = new User();
     }
 
     public function index() {

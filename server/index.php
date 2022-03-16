@@ -8,16 +8,22 @@ include_once 'model/Mission.class.php';
 include_once 'model/Service.class.php';
 include_once 'model/User.class.php';
 include_once 'controller/HomeController.class.php';
+include_once 'controller/CostsController.class.php';
+include_once 'controller/MissionsController.class.php';
+include_once 'controller/UsersController.class.php';
 
 $homeController = new HomeController();
+$costsController = new CostsController();
+$missionsController = new MissionsController();
+$usersController = new UsersController();
 
 session_start();
 if(!isset($_SESSION["login"])){
-    // if (isset($_GET['action']) && $_GET['action'] == 'inscription') {
-    //     $usersController->addUser();
-    // } else {
-    //     $usersController->index();
-    // }
+    if (isset($_GET['action']) && $_GET['action'] == 'inscription') {
+        $usersController->addUser();
+    } else {
+        $homeController->index();
+    }
 } else if (isset($_GET['action'])) {
     $action = $_GET['action'];
     switch ($action) {
@@ -45,9 +51,9 @@ if(!isset($_SESSION["login"])){
         case 'viewCosts':
             break;
         case 'logout':
-            // $_SESSION = array();
-            // session_destroy();
-            // $usersController->index();
+            $_SESSION = array();
+            session_destroy();
+            $homeController->index();
             break;
         default:
             $homeController->index();
