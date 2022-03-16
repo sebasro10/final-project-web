@@ -3,7 +3,7 @@
 $host = "localhost";
 $root = "root";
 $root_password = "root";
-$db = "companyDB1";
+$db = "companyDB";
 $dsn = "mysql:host=$host;dbname=$db";
 
 ?>
