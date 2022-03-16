@@ -22,6 +22,7 @@ $statements = [
     );',
     'CREATE TABLE missions( 
         id_mission   INT AUTO_INCREMENT,
+        name1 VARCHAR(100) NOT NULL,
         status1  VARCHAR(100) NOT NULL, 
         place   VARCHAR(100) NOT NULL,
         description1  VARCHAR(1000) NOT NULL,
