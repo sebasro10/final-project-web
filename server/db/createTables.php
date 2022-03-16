@@ -22,35 +22,35 @@ $statements = [
     );',
     'CREATE TABLE missions( 
         id_mission   INT AUTO_INCREMENT,
-        name1 VARCHAR(100) NOT NULL,
-        status1  VARCHAR(100) NOT NULL, 
+        name VARCHAR(100) NOT NULL,
+        status  VARCHAR(100) NOT NULL, 
         place   VARCHAR(100) NOT NULL,
-        description1  VARCHAR(1000) NOT NULL,
-        start_date1  VARCHAR(100) NOT NULL,
-        end_date1   VARCHAR(100) NOT NULL,
+        description  VARCHAR(1000) NOT NULL,
+        start_date  VARCHAR(100) NOT NULL,
+        end_date   VARCHAR(100) NOT NULL,
         id_user   INT,
         foreign key (id_user) references users(id_user),
         PRIMARY KEY(id_mission)
     );',
-    'CREATE TABLE credit( 
+    'CREATE TABLE credits( 
         id_credit   INT AUTO_INCREMENT,
-        date1 VARCHAR(100) NOT NULL, 
-        description1   VARCHAR(100) NOT NULL,
+        date VARCHAR(100) NOT NULL, 
+        description   VARCHAR(100) NOT NULL,
         quantity   VARCHAR(100) NOT NULL,
         currency  VARCHAR(100) NOT NULL,
         id_mission  INT,
         foreign key (id_mission) references missions(id_mission),
         PRIMARY KEY(id_credit)
     );',
-    'CREATE TABLE cost (
+    'CREATE TABLE costs (
         id_cost   INT AUTO_INCREMENT,
-        date1 VARCHAR(100) NOT NULL, 
-        description1   VARCHAR(100) NOT NULL,
+        date VARCHAR(100) NOT NULL, 
+        description   VARCHAR(100) NOT NULL,
         quantity   VARCHAR(100) NOT NULL,
         currency  VARCHAR(100) NOT NULL,
         id_mission   INT,
-        preuve VARCHAR(100) NOT NULL, 
-        type_de_depense VARCHAR(100) NOT NULL,
+        evidence VARCHAR(100) NOT NULL, 
+        type_of_expense VARCHAR(100) NOT NULL,
         foreign key (id_mission) references missions(id_mission),
         PRIMARY KEY(id_cost)
     )'
