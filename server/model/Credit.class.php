@@ -9,7 +9,7 @@ class Credit extends DataModel {
     }
 
     function readRecords() {
-        $sql = 'select * from citations';
+        $sql = 'select * from credits';
         $this->statement = $this->conn->query($sql);
         $this->statement->setFetchMode(PDO::FETCH_ASSOC);
         $records = $this->statement->fetchAll();
@@ -17,25 +17,26 @@ class Credit extends DataModel {
     }
 
     function deleteRecord($id) {
-        $sql = "delete from citations where id='$id'";
+        $sql = "delete from credits where id_credit=$id";
         $this->statement = $this->conn->query($sql);
         $success = $this->statement->execute();
         return $success;
     }
 
     function insertRecord($values) {
-        $sql = 'insert into citations (id_user, id_author, citation, citationDate) values(?,?,?,?)';
+        $sql = 'insert into credits (date, description, quantity, currency, id_mission) values(?,?,?,?,?)';
         $this->statement = $this->conn->prepare($sql);
         $success = $this->statement->execute($values);
         return $success;
     }
 
     function updateRecord($id, $values) {
-        $sql = "update citations set id_user=?,
-            id_author=?,
-            citation=?,
-            citationDate=?
-            where id=$id";
+        $sql = "update credits set date=?,
+            description=?,
+            quantity=?,
+            currency=?,
+            id_mission=?
+            where id_credit=$id";
         $this->statement = $this->conn->prepare($sql);
         $success = $this->statement->execute($values);
         return $success;

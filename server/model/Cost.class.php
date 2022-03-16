@@ -17,7 +17,7 @@ class Cost extends DataModel {
     }
 
     function deleteRecord($id) {
-        $sql = "delete from costs where id_cost='$id'";
+        $sql = "delete from costs where id_cost=$id";
         $this->statement = $this->conn->query($sql);
         $success = $this->statement->execute();
         return $success;
@@ -43,18 +43,6 @@ class Cost extends DataModel {
         $success = $this->statement->execute($values);
         return $success;
     }
-
-    // function getRecordById($id) {
-    //     $sql = "select * from costs where id='$id'";
-    //     $this->statement = $this->conn->prepare($sql);
-    //     $success = $this->statement->execute();
-    //     if ($success) {
-    //         $this->statement->setFetchMode(PDO::FETCH_ASSOC);
-    //         $records = $this->statement->fetchAll();
-    //         return $records;
-    //     }
-    //     return [];
-    // }
 
 }
 
