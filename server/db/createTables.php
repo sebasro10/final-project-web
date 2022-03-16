@@ -3,6 +3,12 @@
 require_once("connect.php");
 
 $statements = [
+    'CREATE TABLE company( 
+        id_company INT(10) AUTO_INCREMENT,
+        name VARCHAR(100) NOT NULL, 
+        logo VARCHAR(100) NOT NULL,
+        PRIMARY KEY (id_company)
+    );',
     'CREATE TABLE services( 
         id_service INT(10) AUTO_INCREMENT,
         name VARCHAR(100) NOT NULL, 
