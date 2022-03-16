@@ -32,7 +32,7 @@ $statements = [
         foreign key (id_user) references users(id_user),
         PRIMARY KEY(id_mission)
     );',
-    'CREATE TABLE credit( 
+    'CREATE TABLE credits( 
         id_credit   INT AUTO_INCREMENT,
         date1 VARCHAR(100) NOT NULL, 
         description1   VARCHAR(100) NOT NULL,
@@ -42,7 +42,7 @@ $statements = [
         foreign key (id_mission) references missions(id_mission),
         PRIMARY KEY(id_credit)
     );',
-    'CREATE TABLE cost (
+    'CREATE TABLE costs (
         id_cost   INT AUTO_INCREMENT,
         date1 VARCHAR(100) NOT NULL, 
         description1   VARCHAR(100) NOT NULL,
