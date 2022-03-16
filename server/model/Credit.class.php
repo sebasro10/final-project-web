@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 include_once 'util/DataModel.class.php';
 
-class Credit extends DataModel {
-   
-    function __construct(){
+class credits extends DataModel {
+
+    function __construct() {
         parent::__construct('credit');
     }
 
