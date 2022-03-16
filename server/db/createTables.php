@@ -1,58 +1,60 @@
 <?php
 
 require_once("connect.php");
-// SQL statement for creating new tables
+
 $statements = [
-    'CREATE TABLE Services( 
-        id   INT AUTO_INCREMENT,
-        namea  VARCHAR(100) NOT NULL, 
-        PRIMARY KEY(id)
+    'CREATE TABLE services( 
+        id_service INT(10) AUTO_INCREMENT,
+        name VARCHAR(100) NOT NULL, 
+        PRIMARY KEY (id_service)
     );',
-    'CREATE TABLE Users( 
-        id   INT AUTO_INCREMENT,
-        first_name  VARCHAR(100) NOT NULL, 
-        last_name   VARCHAR(100) NULL,
-        mdp   VARCHAR(100) NULL,
-        email  VARCHAR(100) NULL,
-        phone   VARCHAR(100) NULL,
-        service1   VARCHAR(100) NULL,
-        PRIMARY KEY(id)
+    'CREATE TABLE users( 
+        id_user INT AUTO_INCREMENT,
+        first_name VARCHAR(100) NOT NULL, 
+        last_name   VARCHAR(100) NOT NULL,
+        mdp   VARCHAR(100) NOT NULL,
+        email  VARCHAR(100) NOT NULL,
+        phone   VARCHAR(100) NOT NULL,
+        service   VARCHAR(100) NOT NULL,
+        id_service  INT(10),
+        PRIMARY KEY(id_user),
+        FOREIGN KEY(id_service) REFERENCES services(id_service)     
     );',
-    'CREATE TABLE Mission( 
-        id   INT AUTO_INCREMENT,
+    'CREATE TABLE missions( 
+        id_mission   INT AUTO_INCREMENT,
         status1  VARCHAR(100) NOT NULL, 
-        place   VARCHAR(100) NULL,
-        date1   VARCHAR(100) NULL,
-        start_date1  VARCHAR(100) NULL,
-        end_date1   VARCHAR(100) NULL,
-        user_id1   VARCHAR(100) NULL,
-        PRIMARY KEY(id)
+        place   VARCHAR(100) NOT NULL,
+        description1  VARCHAR(1000) NOT NULL,
+        start_date1  VARCHAR(100) NOT NULL,
+        end_date1   VARCHAR(100) NOT NULL,
+        id_user   INT,
+        foreign key (id_user) references users(id_user),
+        PRIMARY KEY(id_mission)
     );',
-    'CREATE TABLE Credit( 
-        id   INT AUTO_INCREMENT,
+    'CREATE TABLE credit( 
+        id_credit   INT AUTO_INCREMENT,
         date1 VARCHAR(100) NOT NULL, 
-        description1   VARCHAR(100) NULL,
-        quantity   VARCHAR(100) NULL,
-        currency  VARCHAR(100) NULL,
-        mission_id   VARCHAR(100) NULL,
-        PRIMARY KEY(id)
+        description1   VARCHAR(100) NOT NULL,
+        quantity   VARCHAR(100) NOT NULL,
+        currency  VARCHAR(100) NOT NULL,
+        id_mission  INT,
+        foreign key (id_mission) references missions(id_mission),
+        PRIMARY KEY(id_credit)
     );',
-    'CREATE TABLE Tax (
-        id   INT AUTO_INCREMENT,
+    'CREATE TABLE cost (
+        id_cost   INT AUTO_INCREMENT,
         date1 VARCHAR(100) NOT NULL, 
-        description1   VARCHAR(100) NULL,
-        quantity   VARCHAR(100) NULL,
-        currency  VARCHAR(100) NULL,
-        mission_id   VARCHAR(100) NULL,
-        preuve VARCHAR(100) NULL, 
-        type_de_depense VARCHAR(100) NULL,
-        PRIMARY KEY(id)
+        description1   VARCHAR(100) NOT NULL,
+        quantity   VARCHAR(100) NOT NULL,
+        currency  VARCHAR(100) NOT NULL,
+        id_mission   INT,
+        preuve VARCHAR(100) NOT NULL, 
+        type_de_depense VARCHAR(100) NOT NULL,
+        foreign key (id_mission) references missions(id_mission),
+        PRIMARY KEY(id_cost)
     )'
 ];
 
-//print_r($statements);
-
-// execute SQL statements
 foreach ($statements as $statement) {
     try {
         $pdo->exec($statement);
