@@ -19,8 +19,8 @@ content="width=device-width">
 </tr>
 <?php
 
-include("db-functions.php");
-include_once("config.php");
+include("../db/db-functions.php");
+include_once("../db/config.php");
 
 $pdo = connect();
 $sql="SELECT * FROM missions";

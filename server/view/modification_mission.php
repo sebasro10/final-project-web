@@ -10,8 +10,8 @@
 <body>
 
  <?php 
-include_once("db-functions.php");
-include_once("config.php");
+include_once("../db/db-functions.php");
+include_once("../db/config.php");
 
  ?>
     <h1>Modification de la mission</h1>

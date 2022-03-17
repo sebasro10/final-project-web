@@ -1,4 +1,5 @@
 <?php
+
 require_once("config.php");
 
 echo "$dsn, $root,$root_password";
@@ -9,3 +10,5 @@ $pdo = new PDO(
 );
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 echo "<br><br> Connection success <br><br> ";
+
+?>
