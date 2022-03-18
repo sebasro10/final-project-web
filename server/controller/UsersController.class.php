@@ -11,7 +11,25 @@ class UsersController extends Controller {
     }
 
     public function index() {
-        include_once 'view/login.php';
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $mailPost = $_POST['email'];
+            $passwordPost = $_POST['password'];
+            
+            try {
+                $userBD = $this->user->getRecordByEmail($mailPost)[0];
+                if (strcmp(sha1($passwordPost), $userBD["mdp"]) === 0) {
+                    $_SESSION["mail"] = $mailPost;
+                    $_SESSION["id_user"] = $userBD["id_user"];
+                    $_SESSION["lastConnection"] = Date("Y-m-d H:i:s");
+                    $missionsController = new MissionsController();
+                    $missionsController->index();
+                } else throw new Exception();
+            } catch (Exception $e) {
+                include_once 'view/login.php';
+            }
+        } else {
+            include_once 'view/login.php';
+        }
     }
 
     public function addUser() {

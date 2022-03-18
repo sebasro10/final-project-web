@@ -44,6 +44,21 @@ class Mission extends DataModel {
         return $success;
     }
 
+    function closeMission($id){
+        $sql = "update missions set status=:status where id_mission=:id";
+        $this->statement = $this->conn->prepare($sql);
+        $success = $this->statement->execute(['status'=>"cloturée", 'id'=>$id]);
+        return $success;
+    }
+
+    function getRecordById($id) {
+        $sql = "select * from missions where id_mission=$id";
+        $this->statement = $this->conn->query($sql);
+        $this->statement->setFetchMode(PDO::FETCH_ASSOC);
+        $records = $this->statement->fetchAll();
+        return $records;
+    }
+
 }
 
 ?>

@@ -45,6 +45,14 @@ class User extends DataModel {
         return $success;
     }
 
+    function getRecordByEmail($mail) {
+        $sql = "select * from users where email='$mail'";
+        $this->statement = $this->conn->query($sql);
+        $this->statement->setFetchMode(PDO::FETCH_ASSOC);
+        $records = $this->statement->fetchAll();
+        return $records;
+    }
+
 }
 
 ?>

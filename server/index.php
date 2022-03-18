@@ -18,7 +18,7 @@ $missionsController = new MissionsController();
 $usersController = new UsersController();
 
 session_start();
-if(!isset($_SESSION["login"])){
+if(!isset($_SESSION["mail"])){
     if (isset($_GET['action']) && $_GET['action'] == 'signUp') {
         $usersController->addUser();
     } else {
@@ -33,16 +33,23 @@ if(!isset($_SESSION["login"])){
         case 'countability':
             break;
         case 'viewMissions':
+            $missionsController->index();
             break;
         case 'viewMission':
             break;
         case 'endMission':
             break;
         case 'updateMission':
+            $missionsController->updateMission();
+            break;
+        case 'closeMission':
+            $missionsController->closeMission();
             break;
         case 'deleteMission':
+            $missionsController->deleteMission();
             break;
         case 'addMission':
+            $missionsController->addMission();
             break;
         case 'addOperation':
             break;
@@ -54,11 +61,11 @@ if(!isset($_SESSION["login"])){
             $usersController->index();
             break;
         default:
-            $homeController->index();
+            $missionsController->index();
             break;
     }
 } else {
-    $homeController->index();
+    $missionsController->index();
 }
 
 ?>

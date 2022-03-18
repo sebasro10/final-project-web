@@ -21,16 +21,16 @@
             </div>
 
             <div class="text"> Login Form</div>
-            <form action="">
+            <form action="" method="post">
                 <div class="data">
                     <label for="Email">Email</label>
-                    <input type="text" required>
+                    <input name="email" type="text" required>
                 </div>
                 <div class="data">
                     <label for="Password">Password</label>
-                    <input type="password" required>
+                    <input name="password" type="password" required>
                 </div>
-                <div class="forgot-pass"> <a href=""> Forgot Password?</a> </div>
+                <div class="forgot-pass"> <a href="?action=signUp"> Forgot Password?</a> </div>
                 <div class="btn">
                     <div class="inner"> </div>
                     <button type="submit">login</button>
