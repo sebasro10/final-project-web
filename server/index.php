@@ -6,14 +6,17 @@ include_once 'model/Cost.class.php';
 include_once 'model/Credit.class.php';
 include_once 'model/Mission.class.php';
 include_once 'model/Service.class.php';
+include_once 'model/TypeOfExpense.class.php';
 include_once 'model/User.class.php';
 include_once 'controller/HomeController.class.php';
 include_once 'controller/CostsController.class.php';
+include_once 'controller/CreditsController.class.php';
 include_once 'controller/MissionsController.class.php';
 include_once 'controller/UsersController.class.php';
 
 $homeController = new HomeController();
 $costsController = new CostsController();
+$creditsController = new CreditsController();
 $missionsController = new MissionsController();
 $usersController = new UsersController();
 
@@ -30,14 +33,21 @@ if(!isset($_SESSION["mail"])){
         case 'login':
             $homeController->index();
             break;
-        case 'countability':
+        case 'viewCountability':
+            $costsController->index();
+            break;
+        case 'formulaire_credit': // changer le action
+            $creditsController->index();
+            break;
+        case 'formulaire_debit':// changer le action
+            $costsController->addDebit();
+            break;
+        case 'viewCosts':
             break;
         case 'viewMissions':
             $missionsController->index();
             break;
         case 'viewMission':
-            break;
-        case 'endMission':
             break;
         case 'updateMission':
             $missionsController->updateMission();

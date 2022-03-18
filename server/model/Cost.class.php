@@ -24,7 +24,7 @@ class Cost extends DataModel {
     }
 
     function insertRecord($values) {
-        $sql = 'insert into costs (date, description, quantity, currency, id_mission, evidence, type_of_expense) values(?,?,?,?,?,?,?)';
+        $sql = 'insert into costs (date, description, quantity, currency, id_mission, evidence, id_type_of_expense) values(?,?,?,?,?,?,?)';
         $this->statement = $this->conn->prepare($sql);
         $success = $this->statement->execute($values);
         return $success;
@@ -42,6 +42,24 @@ class Cost extends DataModel {
         $this->statement = $this->conn->prepare($sql);
         $success = $this->statement->execute($values);
         return $success;
+    }
+
+    function getDebitCosts($id) {
+        $sql = 'SELECT co.date, co.description, co.quantity, co.evidence, t.name FROM costs AS co JOIN types_of_expense AS t ON co.id_type_of_expense=t.id_type_of_expense WHERE co.id_mission = :id_mission';
+        $this->statement = $this->conn->prepare($sql);
+        $this->statement->execute(['id_mission' => $id]);
+        $this->statement->setFetchMode(PDO::FETCH_ASSOC);
+        $records = $this->statement->fetchAll();
+        return $records;
+    }
+
+    function getCreditCosts($id) {
+        $sql = 'SELECT date, description, quantity FROM credits WHERE id_mission = :id_mission';
+        $this->statement = $this->conn->prepare($sql);
+        $this->statement->execute(['id_mission' => $id]);
+        $this->statement->setFetchMode(PDO::FETCH_ASSOC);
+        $records = $this->statement->fetchAll();
+        return $records;
     }
 
 }
