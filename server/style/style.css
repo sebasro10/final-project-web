@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -6,49 +6,171 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
 }
-nav{
+
+nav {
     background: rgb(31, 141, 204);
 }
 
-label.logo{
-    color:white;
+label.logo {
+    color: white;
     font-size: 30px;
     line-height: 80px;
-    padding: 10px 0px 0 20px; /* top bottom - rigth left*/
+    padding: 10px 0px 0 20px;
+    /* top bottom - rigth left*/
 }
 
-nav ul{
+nav ul {
     float: right;
     margin-right: 20px;
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
 }
 
-nav ul li a{
+nav ul li a {
     color: white;
-    font-size: 17px ;
+    font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
 }
 
-.checkbtn{
+.checkbtn {
     font-size: 30px;
     color: white;
     float: right;
     line-height: 80px;
     margin-right: 40px;
-    cursor: pointer; /*lmao */
+    cursor: pointer;
+    /*lmao */
 }
 
-#check{
+#check {
     display: none;
 }
 
+.login * {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login .center {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(115deg, #23a1d3 10%, #ffffff 90%);
+}
+
+.login .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 410px;
+    padding: 30px;
+    box-shadow: 0 0 7px;
+}
+
+.login .container .text {
+    font-size: 35px;
+    font-weight: 550;
+    text-align: center;
+}
+
+.login .container form {
+    margin-top: -20px;
+}
+
+.login .container form .data {
+    height: 45px;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.login form .data input {
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.login form .btn {
+    margin: 30px 0;
+    height: 45px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.login form .btn .inner {
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    z-index: -1;
+    background: -webkit-linear-gradient(right, #43bce1, #e3eaeb);
+}
+
+.login form .btn button {
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: black;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.login form .signin {
+    text-align: center;
+}
+
+.login .closebtn {
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    top: 15px;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: #111;
+}
+
+.menu .nameUser {
+    display: block;
+    color: greenyellow;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
