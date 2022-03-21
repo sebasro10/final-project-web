@@ -30,12 +30,12 @@
                     <label for="Password">Password</label>
                     <input name="password" type="password" required>
                 </div>
-                <div class="forgot-pass"> <a href="?action=signUp"> Forgot Password?</a> </div>
+                <div class="forgot-pass"> <a href="?action=TODO"> Forgot Password?</a> </div>
                 <div class="btn">
                     <div class="inner"> </div>
                     <button type="submit">login</button>
                 </div>
-                <div class="signin"><a href="../sign_up/signup.php">Sign up</a></div>
+                <div class="signin"><a href="?action=signUp">Sign up</a></div>
             </form>
         </div>
     </div>

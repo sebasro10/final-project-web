@@ -10,6 +10,7 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+    <?php include_once 'view/menu.php'; ?>
     <div class="container">
         <h1 style="text-align:center">Feuille de comptabilité</h1>
         <p><label for="name" class="form-label">Nom : <?= $record['name'] ?></label></p>

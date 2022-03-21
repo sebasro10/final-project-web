@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <?php include_once 'view/menu.php'; ?>
     <h1>Création d'une mission</h1>
 
     <form method="post" name="FrameMission" action="" >

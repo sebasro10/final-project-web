@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <?php include_once 'view/menu.php'; ?>
     <h1>Missions</h1>
 
     <table border="1" bgcolor="#ccccff" frame="above">

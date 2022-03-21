@@ -10,6 +10,7 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+    <?php include_once 'view/menu.php'; ?>
     <div class="container">
         <h1>Ajouter une opération</h1>
         <form action="?action=formulaire_debit" method="post" enctype="multipart/form-data">

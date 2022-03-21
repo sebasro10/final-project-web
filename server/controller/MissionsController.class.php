@@ -25,10 +25,10 @@ class MissionsController extends Controller {
                 $description = $_POST['description_mission'];
                 $statut = "en cours";
                 
-                $user = $_SESSION['user_id'];
+                $user = $_SESSION['id_user'];
 
                 $this->mission->insertRecord([$nom, $statut , $lieu, $description, $date_debut, $date_fin, $user]);
-                echo "mission ajoutée";
+                $this->index();
             }
         } else {
             include_once 'view/formulaire_mission2.php';

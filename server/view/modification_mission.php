@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <?php include_once 'view/menu.php'; ?>
     <h1>Modification de la mission</h1>
 
     <form method="post" name="FrameCitation" action="">
