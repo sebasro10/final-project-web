@@ -11,11 +11,10 @@ class CostsController extends Controller {
     }
 
     public function index() {
-        $id_mission = 2; // why fixed?
         $mission = new Mission;
-        $record = $mission->getRecordById($id_mission)[0];
-        $dataDebits = $this->cost->getDebitCosts($id_mission);
-        $dataCredits = $this->cost->getCreditCosts($id_mission);
+        $record = $mission->getRecordMostRecent();
+        $dataDebits = $this->cost->getDebitCosts($record["id_mission"]);
+        $dataCredits = $this->cost->getCreditCosts($record["id_mission"]);
         include_once 'view/feuille_de_comptabilite.php';
     }
 
@@ -50,6 +49,15 @@ class CostsController extends Controller {
             $records = $typeOfExpense->readRecords();
             include_once 'view/formulaire_debit.php';
         }
+    }
+
+    public function viewCostsOfMission() {
+        $id = $_GET['id'];
+        $mission = new Mission;
+        $record = $mission->getRecordById($id);
+        $dataDebits = $this->cost->getDebitCosts($record["id_mission"]);
+        $dataCredits = $this->cost->getCreditCosts($record["id_mission"]);
+        include_once 'view/feuille_de_comptabilite.php';
     }
 
 }

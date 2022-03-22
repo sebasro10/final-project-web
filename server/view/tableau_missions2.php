@@ -14,7 +14,7 @@
             <td><?= $row['name'] ?></td>
             <td><?= $row['status'] ?></td>
             <td>
-                <button id="visualiser" name="visualiser" onclick="location.href = 'à changer.php';">visualiser</button>
+                <button id="visualiser" name="visualiser" onclick="location.href = '?action=viewMission&id=<?= $row['id_mission'] ?>';">visualiser</button>
                 <button id="cloturer" name="cloturer" onclick="location.href = '?action=closeMission&id=<?= $row['id_mission'] ?>';">cloturer</button>
                 <button id="modifier" name="modifier" onclick="location.href = '?action=updateMission&id=<?= $row['id_mission'] ?>';">modifier</button>
                 <button id="supprimer" name="supprimer" onclick="location.href = '?action=deleteMission&id=<?= $row['id_mission'] ?>';">supprimer</button>

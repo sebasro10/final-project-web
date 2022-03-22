@@ -55,8 +55,16 @@ class Mission extends DataModel {
         $sql = "select * from missions where id_mission=$id";
         $this->statement = $this->conn->query($sql);
         $this->statement->setFetchMode(PDO::FETCH_ASSOC);
-        $records = $this->statement->fetchAll();
+        $records = $this->statement->fetch();
         return $records;
+    }
+
+    function getRecordMostRecent() {
+        $sql = "select * from missions ORDER BY start_date DESC";
+        $this->statement = $this->conn->query($sql);
+        $this->statement->setFetchMode(PDO::FETCH_ASSOC);
+        $record = $this->statement->fetch();
+        return $record;
     }
 
 }

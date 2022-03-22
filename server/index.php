@@ -60,6 +60,7 @@
                 $missionsController->index();
                 break;
             case 'viewMission':
+                $costsController->viewCostsOfMission();
                 break;
             case 'updateMission':
                 $missionsController->updateMission();

@@ -22,8 +22,8 @@ class UsersController extends Controller {
                     $_SESSION["id_user"] = $userBD["id_user"];
                     $_SESSION["name_user"] = $userBD["first_name"] . " " . $userBD["last_name"];
                     $_SESSION["lastConnection"] = Date("Y-m-d H:i:s");
-                    $missionsController = new MissionsController();
-                    $missionsController->index();
+                    $costsController = new CostsController();
+                    $costsController->index();
                 } else throw new Exception();
             } catch (Exception $e) {
                 include_once 'view/login.php';
