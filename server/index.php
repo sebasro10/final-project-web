@@ -55,6 +55,7 @@
                 $costsController->addDebit();
                 break;
             case 'viewCosts':
+                $costsController->viewCosts();
                 break;
             case 'viewAllMissions':
                 $missionsController->viewAllMissions();

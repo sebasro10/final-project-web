@@ -68,7 +68,7 @@ class Mission extends DataModel {
     }
 
     function readAllRecords() {
-        $sql = 'select m.name, m.status, u.last_name from missions m, users u WHERE m.id_user = u.id_user';
+        $sql = 'select m.name, m.status, u.last_name, m.id_mission from missions m, users u WHERE m.id_user = u.id_user';
         $this->statement = $this->conn->query($sql);
         $this->statement->setFetchMode(PDO::FETCH_ASSOC);
         $records = $this->statement->fetchAll();

@@ -16,7 +16,7 @@
             <td><?= $row['status'] ?></td>
             <td><?= $row['last_name'] ?></td>
             <td>
-                <button id="visualiser" name="visualiser" onclick="location.href = 'à changer.php';">visualiser</button>
+                <button id="visualiser" name="visualiser" onclick="location.href = '?action=viewMission&id=<?= $row['id_mission'] ?>';">visualiser</button>
             </td>
         </tr>
         <?php endforeach; ?>

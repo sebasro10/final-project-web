@@ -24,6 +24,7 @@ class UsersController extends Controller
                     $_SESSION["mail"] = $mailPost;
                     $_SESSION["id_user"] = $userBD["id_user"];
                     $_SESSION["name_user"] = $userBD["first_name"] . " " . $userBD["last_name"];
+                    $_SESSION["is_user"] = $userBD["id_service"] == 2;
                     $_SESSION["lastConnection"] = Date("Y-m-d H:i:s");
                     $costsController = new CostsController();
                     $costsController->index();

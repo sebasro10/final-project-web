@@ -60,6 +60,9 @@ class CostsController extends Controller {
         include_once 'view/feuille_de_comptabilite.php';
     }
 
+    public function viewCosts() {
+        include_once 'view/feuille_visualisation_depenses.php';
+    }
 }
 
 ?>
