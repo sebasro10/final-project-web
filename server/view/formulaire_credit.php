@@ -1,6 +1,6 @@
 <script> document.title = 'Ajouter une opération'; </script>
 <?php include_once 'view/menu.php'; ?>
-<div class="container">
+<div class="container bg-primary">
     <h1>Ajouter une opération</h1>
     <form action="?action=formulaire_credit" method="post">
         <div class="mb-3">
