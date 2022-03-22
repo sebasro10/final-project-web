@@ -2,7 +2,7 @@
 <?php include_once 'view/menu.php'; ?>
 <div class="container">
     <h1>Ajouter une opération</h1>
-    <form action="?action=formulaire_debit" method="post" enctype="multipart/form-data">
+    <form action="?action=formulaire_debit&id=<?= $id_mission ?>" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="date" class="form-label">Date</label>
             <input type="date" class="form-control" id="date" name="date" required>

@@ -56,14 +56,13 @@ class MissionsController extends Controller {
                 $description = $_POST['description_mission'];
                 $statut = "en cours";
                 
-                $user = $_SESSION['user_id'];
+                $user = $_SESSION['id_user'];
             
-                modifier_mission($nom, $statut , $lieu, $date_debut, $date_fin, $description, $user, $id_mission);
-                
-                echo "mission modifiée";
+                $this->mission->updateRecord($id_mission, [$nom, $statut , $lieu, $description, $date_debut, $date_fin, $user]);
+                $this->index();
             }
         } else {
-            $record = $this->mission->getRecordById($_GET['id'], $_SESSION["id_user"])[0];
+            $record = $this->mission->getRecordById($_GET['id'], $_SESSION["id_user"]);
             include_once 'view/modification_mission.php';
         }
     }

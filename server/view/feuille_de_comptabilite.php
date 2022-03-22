@@ -18,7 +18,6 @@
             <th class="thliste">Montant</th>
             <th class="thliste">Type de frais</th>
             <th class="thliste">Preuve</th>
-            <th class="thliste">Actions</th>
         </tr>
         <?php foreach ($dataDebits as $item): ?>
         <tr>
@@ -40,6 +39,8 @@
         </tr>
         <?php endforeach; ?>
     </table>
-    <button onclick="location.href = '?action=formulaire_credit';">Créer un crédit</button>
-    <button onclick="location.href = '?action=formulaire_debit';">Créer un débit</button>
+    <?php if (isset($record['id_mission'])) : ?>
+        <button onclick="location.href = '?action=formulaire_credit&id=<?= $record['id_mission'] ?>';">Créer un crédit</button>
+        <button onclick="location.href = '?action=formulaire_debit&id=<?= $record['id_mission'] ?>';">Créer un débit</button>
+    <?php endif; ?>
 </div>

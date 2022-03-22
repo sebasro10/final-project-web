@@ -15,11 +15,12 @@ class CreditsController extends Controller {
             $date = $_POST['date'];
             $description = $_POST['description'];
             $quantity = $_POST['montant'];
-            $id_mission = 2; //$_SESION['id_mission_a_afficher']
+            $id_mission = $_GET['id'];
             $this->credit->insertRecord([$date, $description, $quantity, "", $id_mission, "", 1]); // missing data
             $costsController = new CostsController();
             $costsController->index();
         } else {
+            $id_mission = $_GET['id'];
             include_once 'view/formulaire_credit.php';
         }
     }

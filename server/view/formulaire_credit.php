@@ -2,7 +2,7 @@
 <?php include_once 'view/menu.php'; ?>
 <div class="container bg-primary">
     <h1>Ajouter une opération</h1>
-    <form action="?action=formulaire_credit" method="post">
+    <form action="?action=formulaire_credit&id=<?= $id_mission ?>" method="post">
         <div class="mb-3">
             <label for="date" class="form-label">Date</label>
             <input type="date" class="form-control" id="date" name="date" required>

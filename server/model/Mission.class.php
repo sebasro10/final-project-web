@@ -9,7 +9,8 @@ class Mission extends DataModel {
     }
 
     function readRecords() {
-        $sql = 'select * from missions';
+        $id_user = $_SESSION['id_user'];
+        $sql = "select * from missions where id_user=$id_user";
         $this->statement = $this->conn->query($sql);
         $this->statement->setFetchMode(PDO::FETCH_ASSOC);
         $records = $this->statement->fetchAll();
