@@ -61,6 +61,7 @@ $statements = [
     )'
 ];
 
+
 //print_r($statements);
 
 // execute SQL statements
