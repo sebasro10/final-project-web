@@ -7,6 +7,7 @@ class UsersController extends Controller
 
     private $user = null;
 
+
     function __construct()
     {
         $this->user = new User();
@@ -62,11 +63,14 @@ class UsersController extends Controller
                 // Requirements Password: 8 characteres, Majuscule, Minuscule
 
 
-                $this->user->insertRecord([$_SESSION['id_user'], $name, $lastName, $password, $email, $phoneNumber, $service, 123]);
+                $this->user->insertRecord([$_SESSION['id_user'], $name, $lastName, $password, $email, $phoneNumber, $service, 1]);
 
+                $this->index();
                 //require_once('addSamples.php');
             }
         } else {
+            $service = new Service();
+            $records = $service->readRecords();
             include_once 'view/signup.php';
         }
     }

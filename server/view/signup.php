@@ -2,11 +2,6 @@
     document.title = "Sign Up";
 </script>
 
-<?php
-
-
-?>
-
 <div class="center">
     <div class="container">
         <div class="closebtn">
@@ -33,10 +28,20 @@
                 <label for="Confirm_email">Confirm email</label>
                 <input type="text" name="emailConfirm" required>
             </div>
+
+            <div class="data">
+                <select name="type_depense">
+                    <option>---Type---</option>
+                    <?php foreach ($records as $record) : ?>
+                        <option value=<?= $record['id_service'] ?>> <?= $record['name'] ?> </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
             <div class="data">
                 <label for="phoneNumber">Phone number</label>
                 <input type="text" name="phoneNumber" required>
             </div>
+
             <div class="data">
                 <label for="services">Services</label>
                 <input type="text" name="service" value="to modify-> spinner">
