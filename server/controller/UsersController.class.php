@@ -61,7 +61,7 @@ class UsersController extends Controller
                 // Requirements Password: 8 characteres, Majuscule, Minuscule
 
 
-                $this->user->insertRecord([$_SESSION['id_user'], $name, $lastName, $password, $email, $phoneNumber, $service, 123]);
+                $this->user->insertRecord([$_SESSION['id_user'], $name, $lastName, $password, $email, $phoneNumber, $service, 1]);
 
                 //require_once('addSamples.php');
             }
