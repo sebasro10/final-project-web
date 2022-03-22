@@ -63,7 +63,7 @@ class MissionsController extends Controller {
                 echo "mission modifiée";
             }
         } else {
-            $record = $this->mission->getRecordById($_GET['id'])[0];
+            $record = $this->mission->getRecordById($_GET['id'], $_SESSION["id_user"])[0];
             include_once 'view/modification_mission.php';
         }
     }

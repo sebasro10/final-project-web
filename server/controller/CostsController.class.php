@@ -12,7 +12,7 @@ class CostsController extends Controller {
 
     public function index() {
         $mission = new Mission;
-        $record = $mission->getRecordMostRecent();
+        $record = $mission->getRecordMostRecent($_SESSION["id_user"]);
         $dataDebits = $this->cost->getDebitCosts($record["id_mission"]);
         $dataCredits = $this->cost->getCreditCosts($record["id_mission"]);
         include_once 'view/feuille_de_comptabilite.php';
@@ -54,7 +54,7 @@ class CostsController extends Controller {
     public function viewCostsOfMission() {
         $id = $_GET['id'];
         $mission = new Mission;
-        $record = $mission->getRecordById($id);
+        $record = $mission->getRecordById($id, $_SESSION["id_user"]);
         $dataDebits = $this->cost->getDebitCosts($record["id_mission"]);
         $dataCredits = $this->cost->getCreditCosts($record["id_mission"]);
         include_once 'view/feuille_de_comptabilite.php';
