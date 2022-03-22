@@ -68,6 +68,11 @@ class MissionsController extends Controller {
         }
     }
 
+    public function viewAllMissions() {
+        $records = $this->mission->readAllRecords();
+        include_once 'view/tableau_mission_direction.php';
+    }
+
 }
 
 ?>

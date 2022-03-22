@@ -56,6 +56,9 @@
                 break;
             case 'viewCosts':
                 break;
+            case 'viewAllMissions':
+                $missionsController->viewAllMissions();
+                break;
             case 'viewMissions':
                 $missionsController->index();
                 break;
