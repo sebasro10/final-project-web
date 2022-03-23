@@ -13,6 +13,7 @@ This section explains how to implement the database, tables and sample data need
 
 
 ![alt text](https://github.com/sebasro10/final-project-web/blob/develop/images/img1.png)
+![alt text](https://github.com/sebasro10/final-project-web/blob/develop/images/img2.png)
 
 ### 2. User creation (Sign up)
 1. With your browser please open the following file: "final-project-web/server/index.php". You should see an image like the one below. 
