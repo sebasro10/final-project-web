@@ -1,3 +1,4 @@
+
 <?php
 
 include_once 'controller/Controller.class.php';
@@ -59,13 +60,10 @@ class UsersController extends Controller
                 $password = sha1($_POST['password']);
                 $confirm = $_POST['Cpassword'];
 
-                //validations
-                // Requirements Password: 8 characteres, Majuscule, Minuscule
+                //echo "hello";
 
                 $this->user->insertRecord([$name, $lastName, $password, $email, $phoneNumber, $service]);
-
                 $this->index();
-                //require_once('addSamples.php');
             }
         } else {
             $service = new Service();
