@@ -20,7 +20,7 @@
                     <label for="Password">Password</label>
                     <input name="password" type="password" required>
                 </div>
-                <div class="forgot-pass"> <a href="?action=TODO"> Forgot Password?</a> </div>
+                <!-- <div class="forgot-pass"> <a href="?action=TODO"> Forgot Password?</a> </div> -->
                 <div class="btn">
                     <div class="inner"> </div>
                     <button type="submit">login</button>
