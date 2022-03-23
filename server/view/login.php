@@ -1,16 +1,17 @@
-<script> document.title = "Login"; </script>
+<script>
+    document.title = "Login";
+</script>
 <div class="login">
     <div class="center">
         <div class="container">
-            <div class="closebtn">
+            <!-- <div class="closebtn">
                 <a href="../index.php">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </a>
-
-            </div>
+            </div> -->
 
             <div class="text"> Login Form</div>
-            <form action="" method="post">
+            <form method="post">
                 <div class="data">
                     <label for="Email">Email</label>
                     <input name="email" type="text" required>

@@ -33,7 +33,7 @@
     $usersController = new UsersController();
 
     session_start();
-    if(!isset($_SESSION["mail"])){
+    if (!isset($_SESSION["mail"])) {
         if (isset($_GET['action']) && $_GET['action'] == 'signUp') {
             $usersController->addUser();
         } else {
@@ -51,7 +51,7 @@
             case 'formulaire_credit': // changer le action
                 $creditsController->index();
                 break;
-            case 'formulaire_debit':// changer le action
+            case 'formulaire_debit': // changer le action
                 $costsController->addDebit();
                 break;
             case 'viewCosts':

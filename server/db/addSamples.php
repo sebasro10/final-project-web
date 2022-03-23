@@ -8,11 +8,12 @@ $pass2 = sha1("president2024");;
 
 $statements = [
     'INSERT INTO `services` (`id_service`, `name`) VALUES (1, "Admin");',
-    'INSERT INTO `services` (`id_service`, `name`) VALUES (2, "IT");',
-    'INSERT INTO `users` (`id_user`, `first_name`, `last_name`, `mdp`, `email`, `phone`, `service`, `id_service`) 
-    VALUES (NULL, "Donald", "Trump", "' . $pass1 . '" , "MakeThisCompany@GreatAgain.com", "1234567", "Administrator", 1);',
-    'INSERT INTO `users` (`id_user`, `first_name`, `last_name`, `mdp`, `email`, `phone`, `service`, `id_service`) 
-    VALUES (NULL, "Emmanuel", "Macron", "' . $pass2 . '", "Manu@president.fr", "1234567", "Administrator", 1)'
+    'INSERT INTO `services` (`id_service`, `name`) VALUES (2, "User");',
+    'INSERT INTO `services` (`id_service`, `name`) VALUES (3, "IT");',
+    'INSERT INTO `users` (`id_user`, `first_name`, `last_name`, `mdp`, `email`, `phone`, `id_service`) 
+    VALUES (NULL, "Donald", "Trump", "' . $pass1 . '" , "Donald@president.com", "1234567", 1);',
+    'INSERT INTO `users` (`id_user`, `first_name`, `last_name`, `mdp`, `email`, `phone`, `id_service`) 
+    VALUES (NULL, "Emmanuel", "Macron", "' . $pass2 . '", "Manu@president.fr", "1234567", 1)'
 ];
 
 

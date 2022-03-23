@@ -30,7 +30,7 @@ class User extends DataModel
     function insertRecord($values)
     {
         $sql = 'insert into users (first_name, last_name, mdp, email, phone, id_service) values(?,?,?,?,?,?)';
-        echo '<br>' . $sql . '<br>';
+        //echo '<br>' . $sql . '<br>';
         $this->statement = $this->conn->prepare($sql);
         $success = $this->statement->execute($values);
         return $success;
